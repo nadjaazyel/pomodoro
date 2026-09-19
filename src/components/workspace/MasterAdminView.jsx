@@ -208,9 +208,9 @@ export default function MasterAdminView({
           </span>
           <div className="rounded-xl bg-[#282a34] border border-[#383b4a] p-3.5 font-mono text-[10px] space-y-2 text-zinc-300">
             <div>[12:28:10] Sessão de administração A1 autenticada</div>
-            <div>[12:25:40] Operador NS acessou o documento Acordo Operacional Q3</div>
-            <div>[12:22:15] Minuta enviada no canal de Operações K9</div>
-            <div>[12:15:02] Integridade do cofre validada com 0 inconformidades</div>
+            <div>[12:25:40] Operador NS acessou o documento Acordo Comercial Distribuidora - Tabela OL Q3</div>
+            <div>[12:22:15] Minuta comercial enviada no canal de Compras K9</div>
+            <div>[12:15:02] Conciliação de taxas de cartões e convênios validada com 0 inconformidades</div>
           </div>
         </div>
       )}

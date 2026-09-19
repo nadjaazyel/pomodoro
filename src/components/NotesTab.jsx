@@ -11,20 +11,28 @@ import NewNoteModal from './NewNoteModal';
 export default function NotesTab() {
   // TODO: REMOVER MOCK DATA AO INTEGRAR SUPABASE
   // TODO: FASE 2 - Sincronização segura de notas e acordos com Supabase (Row Level Security + Client-Side Decryption)
+  // Acordos Comerciais e Contratos de Farmácia
   const [notes, setNotes] = useState([
     {
       id: 'note-1',
-      title: 'Acordo Confidencial de Divisão de Lucros - Q3',
-      content: 'Percentual acordado fixado em 18% para o parceiro operacional, com retenção de 5% para cobertura de riscos de custódia. Liberação condicionada à validação de chaves no dia 30 de cada mês.',
-      date: '16/09/2026',
+      title: 'Acordo Comercial Distribuidora - Tabela OL & Bonificação Q3',
+      content: 'Condições comerciais para linha de genéricos e similares: desconto base de 58,5% sobre PMC na modalidade OL, bonificação de 4,2% em repasse trimestral e prazo médio 28/35/42 dias.',
+      date: '18/09/2026',
       status: 'Ativo',
     },
     {
       id: 'note-2',
-      title: 'Protocolo de Contingência e Destruição',
-      content: 'Em caso de 3 tentativas com PIN incorreto na presença de terceiros, disparar wipe silencioso de cache local e desconectar sessões do Supabase imediatamente.',
-      date: '12/09/2026',
-      status: 'Restrito',
+      title: 'Termo de Parceria PBM & Convênios de Empresas',
+      content: 'Credenciamento e repasse para autorização de vendas com desconto em folha e programas PBM Vidalink/Epharma. Taxa de autorização 1,85% com repasse semanal via D+7.',
+      date: '16/09/2026',
+      status: 'Formalizado',
+    },
+    {
+      id: 'note-3',
+      title: 'Negociação de Taxas de Cartão & Maquininhas (Delivery e Balcão)',
+      content: 'Taxas MDR aprovadas: Débito 0,79%, Crédito à vista 1,45% e Parcelado 2,19%. Isenção de aluguel de 4 máquinas POS e antecipação automática para vendas do delivery.',
+      date: '14/09/2026',
+      status: 'Aprovado',
     },
   ]);
 

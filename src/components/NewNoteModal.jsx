@@ -47,7 +47,7 @@ export default function NewNoteModal({ isOpen, onClose, onSave }) {
               type="text"
               value={title}
               onChange={(e) => setTitle(e.target.value)}
-              placeholder="Ex: Acordo Operacional Setor 4"
+              placeholder="Ex: Acordo Distribuidora Santa Cruz - Genéricos Q3"
               className="w-full bg-[#202126] border border-[#383b4a] rounded-xl px-3.5 py-2.5 text-xs sm:text-sm text-gray-200 placeholder-zinc-500 outline-none focus:border-zinc-400 transition-colors"
             />
           </div>

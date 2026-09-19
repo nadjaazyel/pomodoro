@@ -108,7 +108,7 @@ export default function NewFileModal({ isOpen, onClose, onSave, currentUserCode 
               type="text"
               value={title}
               onChange={(e) => setTitle(e.target.value)}
-              placeholder="Ex: Acordo Operacional Setor 4"
+              placeholder="Ex: Acordo Comercial Distribuidora - Tabela OL Q3"
               autoComplete="off"
               autoCorrect="off"
               autoCapitalize="off"
