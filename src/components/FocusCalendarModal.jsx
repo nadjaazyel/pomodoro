@@ -3,9 +3,10 @@ import { X, CheckCircle2, Flame, Clock } from 'lucide-react';
 
 /**
  * ============================================================================
- * MODAL DE HISTÓRICO & CALENDÁRIO COM DUPLA SENHA SECRETA
+ * MODAL DE HISTÓRICO & CALENDÁRIO COM DUPLA SENHA SECRETA (VERSÃO AMPLIADA)
  * ============================================================================
  * - Aparência 100% legítima de acompanhamento de sessões Pomodoro
+ * - Botões maiores e confortáveis para o toque
  * - DUAS SENHAS SECRETAS:
  *   1) 01 -> 02 -> 03 -> 04 : Desbloqueia OPERADOR PADRÃO ('standard')
  *   2) 01 -> 01 -> 02 -> 02 : Desbloqueia PAINEL MASTER ('master')
@@ -85,11 +86,11 @@ export default function FocusCalendarModal({ isOpen, onClose, onUnlock }) {
 
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/85 backdrop-blur-md p-4 animate-fade-in">
-      <div className="w-full max-w-sm rounded-3xl bg-[#121216] border border-neutral-800 p-5 shadow-2xl flex flex-col text-neutral-200">
+      <div className="w-full max-w-md rounded-3xl bg-[#121216] border border-neutral-800 p-6 shadow-2xl flex flex-col text-neutral-200">
         {/* Header do Calendário */}
-        <div className="flex items-center justify-between pb-3 border-b border-neutral-800">
+        <div className="flex items-center justify-between pb-3.5 border-b border-neutral-800">
           <div className="flex items-center space-x-2">
-            <span className="text-sm font-medium text-white tracking-wide">
+            <span className="text-base font-semibold text-white tracking-wide">
               Setembro 2026
             </span>
           </div>
@@ -98,33 +99,33 @@ export default function FocusCalendarModal({ isOpen, onClose, onUnlock }) {
               setClickSequence([]);
               onClose();
             }}
-            className="p-1 rounded-full text-neutral-400 hover:text-white hover:bg-neutral-800 transition-colors"
+            className="p-1.5 rounded-full text-neutral-400 hover:text-white hover:bg-neutral-800 transition-colors"
             aria-label="Fechar"
           >
-            <X className="w-4 h-4" />
+            <X className="w-5 h-5" />
           </button>
         </div>
 
         {/* Resumo do mês */}
-        <div className="grid grid-cols-2 gap-2 my-3">
-          <div className="flex items-center space-x-2 bg-neutral-900/70 p-2.5 rounded-xl border border-neutral-800/60">
-            <Flame className="w-4 h-4 text-amber-500 shrink-0" />
+        <div className="grid grid-cols-2 gap-3 my-3.5">
+          <div className="flex items-center space-x-3 bg-neutral-900/80 p-3 rounded-2xl border border-neutral-800/80">
+            <Flame className="w-5 h-5 text-amber-500 shrink-0" />
             <div>
-              <div className="text-[10px] text-neutral-400 uppercase tracking-wider font-mono">Streak</div>
-              <div className="text-xs font-semibold text-white">5 dias seguidos</div>
+              <div className="text-[11px] text-neutral-400 uppercase tracking-wider font-mono">Streak</div>
+              <div className="text-sm font-semibold text-white">5 dias seguidos</div>
             </div>
           </div>
-          <div className="flex items-center space-x-2 bg-neutral-900/70 p-2.5 rounded-xl border border-neutral-800/60">
-            <Clock className="w-4 h-4 text-emerald-400 shrink-0" />
+          <div className="flex items-center space-x-3 bg-neutral-900/80 p-3 rounded-2xl border border-neutral-800/80">
+            <Clock className="w-5 h-5 text-emerald-400 shrink-0" />
             <div>
-              <div className="text-[10px] text-neutral-400 uppercase tracking-wider font-mono">Total Foco</div>
-              <div className="text-xs font-semibold text-white">28h 45min</div>
+              <div className="text-[11px] text-neutral-400 uppercase tracking-wider font-mono">Total Foco</div>
+              <div className="text-sm font-semibold text-white">28h 45min</div>
             </div>
           </div>
         </div>
 
         {/* Dias da semana */}
-        <div className="grid grid-cols-7 gap-1 text-center text-[10px] font-mono text-neutral-500 py-1">
+        <div className="grid grid-cols-7 gap-1 text-center text-xs font-mono text-neutral-400 py-1.5 font-semibold">
           <span>DOM</span>
           <span>SEG</span>
           <span>TER</span>
@@ -135,9 +136,9 @@ export default function FocusCalendarModal({ isOpen, onClose, onUnlock }) {
         </div>
 
         {/* Grade do Calendário */}
-        <div className="grid grid-cols-7 gap-1.5 my-2">
+        <div className="grid grid-cols-7 gap-2 my-2.5">
           {Array.from({ length: startOffset }).map((_, i) => (
-            <div key={`offset-${i}`} className="h-8 w-8" />
+            <div key={`offset-${i}`} className="h-10 w-10 sm:h-11 sm:w-11" />
           ))}
 
           {Array.from({ length: daysInMonth }).map((_, index) => {
@@ -150,17 +151,17 @@ export default function FocusCalendarModal({ isOpen, onClose, onUnlock }) {
               <button
                 key={dayNum}
                 onClick={() => handleDayClick(dayNum)}
-                className={`h-9 w-9 rounded-xl flex flex-col items-center justify-center relative transition-all active:scale-95 ${
+                className={`h-10 w-10 sm:h-11 sm:w-11 mx-auto rounded-2xl flex flex-col items-center justify-center relative transition-all active:scale-95 ${
                   isSelected
-                    ? 'bg-neutral-200 text-neutral-950 font-bold shadow-md ring-2 ring-neutral-400'
-                    : 'bg-neutral-900/40 hover:bg-neutral-800 text-neutral-300 font-medium'
+                    ? 'bg-neutral-100 text-neutral-950 font-bold shadow-lg ring-2 ring-neutral-300'
+                    : 'bg-neutral-900/50 hover:bg-neutral-800 text-neutral-200 font-semibold'
                 }`}
               >
-                <span className="text-xs">{dayNum}</span>
+                <span className="text-sm">{dayNum}</span>
                 {hasCompleted && (
                   <span
-                    className={`w-1 h-1 rounded-full mt-0.5 ${
-                      isSelected ? 'bg-neutral-950' : 'bg-emerald-500'
+                    className={`w-1.5 h-1.5 rounded-full mt-0.5 ${
+                      isSelected ? 'bg-neutral-950' : 'bg-emerald-400'
                     }`}
                   />
                 )}
@@ -170,21 +171,21 @@ export default function FocusCalendarModal({ isOpen, onClose, onUnlock }) {
         </div>
 
         {/* Estatísticas do dia selecionado */}
-        <div className="mt-2 bg-neutral-900/80 border border-neutral-800 rounded-2xl p-3 flex items-center justify-between">
+        <div className="mt-3 bg-neutral-900/90 border border-neutral-800 rounded-2xl p-3.5 flex items-center justify-between">
           <div>
-            <div className="text-xs font-medium text-white flex items-center space-x-1.5">
+            <div className="text-sm font-medium text-white flex items-center space-x-2">
               <span>{selectedDay} de Setembro</span>
               {dayStats.sessions > 0 && (
-                <CheckCircle2 className="w-3.5 h-3.5 text-emerald-400" />
+                <CheckCircle2 className="w-4 h-4 text-emerald-400" />
               )}
             </div>
-            <div className="text-[11px] text-neutral-400 mt-0.5">
+            <div className="text-xs text-neutral-400 mt-1">
               {dayStats.sessions > 0
                 ? `${dayStats.sessions} ciclos • ${dayStats.minutes} min de foco produtivo`
                 : 'Nenhum registro para este dia'}
             </div>
           </div>
-          <span className="text-[10px] font-mono px-2 py-0.5 rounded-md bg-neutral-800 text-neutral-300">
+          <span className="text-xs font-mono px-2.5 py-1 rounded-lg bg-neutral-800 text-neutral-300">
             {dayStats.sessions > 0 ? 'Meta Cumprida' : 'Livre'}
           </span>
         </div>

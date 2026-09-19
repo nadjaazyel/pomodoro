@@ -10,6 +10,17 @@
     --sal: env(safe-area-inset-left, 0px);
   }
 
+  html {
+    font-size: 18px;
+    -webkit-text-size-adjust: 100%;
+  }
+
+  @media (max-width: 640px) {
+    html {
+      font-size: 18.5px;
+    }
+  }
+
   html, body {
     height: 100dvh;
     min-height: 100dvh;
@@ -53,15 +64,15 @@
 
 /* Safe Area iOS */
 .pt-safe {
-  padding-top: max(env(safe-area-inset-top, 0px) + 0.75rem, 1.25rem);
+  padding-top: max(env(safe-area-inset-top, 0px) + 0.85rem, 1.4rem);
 }
 
 .pb-safe {
-  padding-bottom: max(env(safe-area-inset-bottom, 0px) + 1.5rem, 2.75rem);
+  padding-bottom: max(env(safe-area-inset-bottom, 0px) + 1.6rem, 3rem);
 }
 
 .bottom-safe {
-  bottom: max(env(safe-area-inset-bottom, 0px) + 1.5rem, 2.75rem);
+  bottom: max(env(safe-area-inset-bottom, 0px) + 1.6rem, 3rem);
 }
 
 @keyframes shake {
