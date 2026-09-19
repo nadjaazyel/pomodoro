@@ -8,15 +8,16 @@ export default {
   theme: {
     extend: {
       colors: {
-        background: '#000000',
+        background: '#202126',
         surface: {
-          DEFAULT: '#09090b',
-          muted: '#121214',
-          subtle: '#18181b',
+          DEFAULT: '#282a34',
+          muted: '#202126',
+          subtle: '#2f3240',
+          card: '#292b36',
         },
         border: {
-          DEFAULT: '#18181b',
-          subtle: '#27272a',
+          DEFAULT: '#383b4a',
+          subtle: '#434759',
         },
       },
       spacing: {

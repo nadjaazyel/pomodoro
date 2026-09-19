@@ -82,10 +82,10 @@ export default function App() {
   };
 
   return (
-    <div className="w-full h-[100dvh] min-h-[100dvh] bg-[#121214] flex items-center justify-center overflow-hidden">
+    <div className="w-full h-[100dvh] min-h-[100dvh] bg-[#202126] flex items-center justify-center overflow-hidden">
       {/* Botão de preview Desktop */}
-      <div className="hidden md:flex fixed top-4 right-4 z-50 items-center space-x-2 bg-[#1c1c21]/90 backdrop-blur-sm border border-neutral-800 px-3 py-1.5 rounded-full text-zinc-400 text-xs shadow-lg">
-        <span className="text-[10px] font-mono text-zinc-500">Preview:</span>
+      <div className="hidden md:flex fixed top-4 right-4 z-50 items-center space-x-2 bg-[#292b36]/90 backdrop-blur-sm border border-[#383b4a] px-3 py-1.5 rounded-full text-zinc-300 text-xs shadow-lg">
+        <span className="text-[10px] font-mono text-zinc-400">Preview:</span>
         <button
           onClick={() => setSimulateIphoneFrame(!simulateIphoneFrame)}
           className="flex items-center space-x-1.5 hover:text-white transition-colors"
@@ -107,15 +107,15 @@ export default function App() {
 
       {/* Container Principal Mobile com 100dvh */}
       <div
-        className={`w-full h-[100dvh] min-h-[100dvh] bg-[#121214] flex flex-col transition-all duration-300 ${
+        className={`w-full h-[100dvh] min-h-[100dvh] bg-[#202126] flex flex-col transition-all duration-300 ${
           simulateIphoneFrame
-            ? 'max-w-[393px] max-h-[852px] h-[852px] rounded-[52px] border-[10px] border-[#222228] shadow-[0_25px_60px_-15px_rgba(0,0,0,0.9)] overflow-hidden relative'
+            ? 'max-w-[393px] max-h-[852px] h-[852px] rounded-[52px] border-[10px] border-[#2c2e3a] shadow-[0_25px_60px_-15px_rgba(0,0,0,0.6)] overflow-hidden relative'
             : 'max-w-none'
         }`}
       >
         {simulateIphoneFrame && (
-          <div className="absolute top-2.5 left-1/2 -translate-x-1/2 w-28 h-7 bg-[#121214] rounded-full z-40 flex items-center justify-center pointer-events-none border border-neutral-800">
-            <div className="w-2.5 h-2.5 rounded-full bg-neutral-900 ml-auto mr-3 border border-neutral-700/60" />
+          <div className="absolute top-2.5 left-1/2 -translate-x-1/2 w-28 h-7 bg-[#202126] rounded-full z-40 flex items-center justify-center pointer-events-none border border-[#383b4a]">
+            <div className="w-2.5 h-2.5 rounded-full bg-[#16171b] ml-auto mr-3 border border-[#383b4a]/60" />
           </div>
         )}
 

@@ -85,10 +85,10 @@ export default function FocusCalendarModal({ isOpen, onClose, onUnlock }) {
   const dayStats = getDayStats(selectedDay);
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/85 backdrop-blur-md p-4 animate-fade-in">
-      <div className="w-full max-w-md rounded-3xl bg-[#121216] border border-neutral-800 p-6 shadow-2xl flex flex-col text-neutral-200">
+    <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/75 backdrop-blur-md p-4 animate-fade-in">
+      <div className="w-full max-w-md rounded-3xl bg-[#272933] border border-[#3a3d4d] p-6 shadow-2xl flex flex-col text-neutral-200">
         {/* Header do Calendário */}
-        <div className="flex items-center justify-between pb-3.5 border-b border-neutral-800">
+        <div className="flex items-center justify-between pb-3.5 border-b border-[#353846]">
           <div className="flex items-center space-x-2">
             <span className="text-base font-semibold text-white tracking-wide">
               Setembro 2026
@@ -99,7 +99,7 @@ export default function FocusCalendarModal({ isOpen, onClose, onUnlock }) {
               setClickSequence([]);
               onClose();
             }}
-            className="p-1.5 rounded-full text-neutral-400 hover:text-white hover:bg-neutral-800 transition-colors"
+            className="p-1.5 rounded-full text-neutral-400 hover:text-white hover:bg-[#343746] transition-colors"
             aria-label="Fechar"
           >
             <X className="w-5 h-5" />
@@ -108,14 +108,14 @@ export default function FocusCalendarModal({ isOpen, onClose, onUnlock }) {
 
         {/* Resumo do mês */}
         <div className="grid grid-cols-2 gap-3 my-3.5">
-          <div className="flex items-center space-x-3 bg-neutral-900/80 p-3 rounded-2xl border border-neutral-800/80">
+          <div className="flex items-center space-x-3 bg-[#202126] p-3 rounded-2xl border border-[#353846]">
             <Flame className="w-5 h-5 text-amber-500 shrink-0" />
             <div>
               <div className="text-[11px] text-neutral-400 uppercase tracking-wider font-mono">Streak</div>
               <div className="text-sm font-semibold text-white">5 dias seguidos</div>
             </div>
           </div>
-          <div className="flex items-center space-x-3 bg-neutral-900/80 p-3 rounded-2xl border border-neutral-800/80">
+          <div className="flex items-center space-x-3 bg-[#202126] p-3 rounded-2xl border border-[#353846]">
             <Clock className="w-5 h-5 text-emerald-400 shrink-0" />
             <div>
               <div className="text-[11px] text-neutral-400 uppercase tracking-wider font-mono">Total Foco</div>
@@ -154,7 +154,7 @@ export default function FocusCalendarModal({ isOpen, onClose, onUnlock }) {
                 className={`h-10 w-10 sm:h-11 sm:w-11 mx-auto rounded-2xl flex flex-col items-center justify-center relative transition-all active:scale-95 ${
                   isSelected
                     ? 'bg-neutral-100 text-neutral-950 font-bold shadow-lg ring-2 ring-neutral-300'
-                    : 'bg-neutral-900/50 hover:bg-neutral-800 text-neutral-200 font-semibold'
+                    : 'bg-[#313442] hover:bg-[#3b3f4f] text-neutral-200 font-semibold border border-[#3a3d4d]'
                 }`}
               >
                 <span className="text-sm">{dayNum}</span>
@@ -171,7 +171,7 @@ export default function FocusCalendarModal({ isOpen, onClose, onUnlock }) {
         </div>
 
         {/* Estatísticas do dia selecionado */}
-        <div className="mt-3 bg-neutral-900/90 border border-neutral-800 rounded-2xl p-3.5 flex items-center justify-between">
+        <div className="mt-3 bg-[#202126] border border-[#353846] rounded-2xl p-3.5 flex items-center justify-between">
           <div>
             <div className="text-sm font-medium text-white flex items-center space-x-2">
               <span>{selectedDay} de Setembro</span>
@@ -179,14 +179,12 @@ export default function FocusCalendarModal({ isOpen, onClose, onUnlock }) {
                 <CheckCircle2 className="w-4 h-4 text-emerald-400" />
               )}
             </div>
-            <div className="text-xs text-neutral-400 mt-1">
-              {dayStats.sessions > 0
-                ? `${dayStats.sessions} ciclos • ${dayStats.minutes} min de foco produtivo`
-                : 'Nenhum registro para este dia'}
+            <div className="text-xs text-neutral-400 mt-0.5">
+              {dayStats.sessions} ciclos • {dayStats.minutes} minutos focados
             </div>
           </div>
-          <span className="text-xs font-mono px-2.5 py-1 rounded-lg bg-neutral-800 text-neutral-300">
-            {dayStats.sessions > 0 ? 'Meta Cumprida' : 'Livre'}
+          <span className="text-xs font-mono px-2.5 py-1 rounded-lg bg-[#343746] text-neutral-200 border border-[#434759]">
+            {dayStats.sessions > 0 ? 'Concluído' : 'Sem registros'}
           </span>
         </div>
       </div>

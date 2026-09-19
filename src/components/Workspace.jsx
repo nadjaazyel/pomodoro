@@ -11,7 +11,7 @@ import MasterAdminView from './workspace/MasterAdminView';
  * ============================================================================
  * WORKSPACE CORPORATIVO & EXECUTIVO (VERSÃO AMPLIADA)
  * ============================================================================
- * - Visual executivo, sóbrio, em tons grafite/carvão (#121214)
+ * - Visual executivo, sóbrio, em tons grafite/carvão (#202126)
  * - Proporções e textos ampliados para excelente legibilidade mobile
  * - Dual-Operator: Master (A1) e Padrão (NS)
  */
@@ -260,15 +260,15 @@ export default function Workspace({ role = 'standard', onLock, onEmergencyPurge 
   const selectedContact = contacts.find((c) => c.id === selectedContactId);
 
   return (
-    <div className="flex flex-col h-[100dvh] min-h-[100dvh] w-full bg-[#121214] text-zinc-300 select-none overflow-hidden">
+    <div className="flex flex-col h-[100dvh] min-h-[100dvh] w-full bg-[#202126] text-zinc-300 select-none overflow-hidden">
       {/* HEADER EXECUTIVO SÓBRIO */}
-      <header className="pt-safe px-5 pb-3.5 bg-[#17171a] border-b border-[#25252b] flex items-center justify-between z-20 shrink-0">
+      <header className="pt-safe px-5 pb-3.5 bg-[#282a34] border-b border-[#353745] flex items-center justify-between z-20 shrink-0">
         <div className="flex items-center space-x-3">
           <div className="w-2.5 h-2.5 rounded-full bg-emerald-500/90" />
           <span className="text-sm font-semibold tracking-wide text-zinc-200">
             {isMaster ? 'Painel Administrativo' : 'Comunicações'}
           </span>
-          <span className="text-xs font-mono px-2.5 py-0.5 rounded-md bg-[#202026] text-zinc-200 border border-[#2e2e38] font-bold">
+          <span className="text-xs font-mono px-2.5 py-0.5 rounded-md bg-[#333644] text-zinc-100 border border-[#414456] font-bold">
             {currentUserCode}
           </span>
         </div>
@@ -276,7 +276,7 @@ export default function Workspace({ role = 'standard', onLock, onEmergencyPurge 
         {/* Botão de Bloqueio / Camuflar */}
         <button
           onClick={onLock}
-          className="flex items-center space-x-2 px-3.5 py-2 rounded-xl bg-[#202026] border border-[#2e2e38] text-zinc-300 hover:text-white hover:border-zinc-500 transition-colors active:scale-95 text-xs sm:text-sm font-medium shadow-sm"
+          className="flex items-center space-x-2 px-3.5 py-2 rounded-xl bg-[#333644] border border-[#414456] text-zinc-300 hover:text-white hover:border-zinc-400 transition-colors active:scale-95 text-xs sm:text-sm font-medium shadow-sm"
           title="Bloquear e voltar ao Pomodoro"
         >
           <Lock className="w-4 h-4" />
@@ -285,7 +285,7 @@ export default function Workspace({ role = 'standard', onLock, onEmergencyPurge 
       </header>
 
       {/* ÁREA CENTRAL DE CONTEÚDO */}
-      <main className="flex-1 overflow-hidden relative bg-[#121214]">
+      <main className="flex-1 overflow-hidden relative bg-[#202126]">
         {/* ABA CHATS (ONDE O APP ABRE DIRETAMENTE) */}
         {currentTab === 'chats' && (
           <>
@@ -339,7 +339,7 @@ export default function Workspace({ role = 'standard', onLock, onEmergencyPurge 
       </main>
 
       {/* TAB BAR NATIVA CORPORATIVA */}
-      <nav className="pb-safe bg-[#17171a] border-t border-[#25252b] z-20 shrink-0">
+      <nav className="pb-safe bg-[#282a34] border-t border-[#353745] z-20 shrink-0">
         <div className="flex items-center justify-around h-18 sm:h-20 max-w-md mx-auto">
           {/* Aba Chats (Principal) */}
           <button
@@ -349,12 +349,12 @@ export default function Workspace({ role = 'standard', onLock, onEmergencyPurge 
             className={`flex flex-col items-center justify-center flex-1 h-full transition-colors active:scale-95 relative ${
               currentTab === 'chats'
                 ? 'text-white font-semibold'
-                : 'text-zinc-500 hover:text-zinc-300'
+                : 'text-zinc-400 hover:text-zinc-200'
             }`}
           >
             <div className="relative">
               <MessageSquare className="w-5 h-5 sm:w-6 sm:h-6 mb-1 stroke-[1.8]" />
-              <span className="absolute -top-1 -right-2 w-4 h-4 rounded-full bg-[#272730] border border-[#383844] text-[9px] font-mono text-zinc-300 flex items-center justify-center">
+              <span className="absolute -top-1 -right-2 w-4 h-4 rounded-full bg-[#3a3d4c] border border-[#484c5e] text-[9px] font-mono text-zinc-200 flex items-center justify-center">
                 4
               </span>
             </div>

@@ -34,7 +34,7 @@
     -webkit-tap-highlight-color: transparent;
     user-select: none;
     -webkit-user-select: none;
-    background-color: #121214;
+    background-color: #202126;
     color: #e4e4e7;
   }
 
@@ -42,7 +42,7 @@
     height: 100dvh;
     min-height: 100dvh;
     width: 100%;
-    background-color: #121214;
+    background-color: #202126;
   }
 
   /* Permitir seleção e digitação normal em campos de texto */

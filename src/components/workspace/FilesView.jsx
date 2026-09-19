@@ -63,9 +63,9 @@ export default function FilesView({
   };
 
   return (
-    <div className="flex flex-col h-full w-full bg-[#121214] text-zinc-300">
+    <div className="flex flex-col h-full w-full bg-[#202126] text-zinc-300">
       {/* Header Corporativo Sóbrio */}
-      <div className="px-5 py-3.5 border-b border-[#24242b] bg-[#161619] flex items-center justify-between shrink-0">
+      <div className="px-5 py-3.5 border-b border-[#353745] bg-[#282a34] flex items-center justify-between shrink-0">
         <div>
           <h2 className="text-base font-semibold text-white tracking-tight">
             Documentos & Acordos
@@ -85,8 +85,8 @@ export default function FilesView({
       </div>
 
       {/* Barra de Filtros e Busca */}
-      <div className="px-4 py-3 border-b border-[#202026] space-y-2.5 shrink-0">
-        <div className="flex items-center space-x-2.5 bg-[#1a1a20] border border-[#2b2b36] rounded-2xl px-3.5 py-2">
+      <div className="px-4 py-3 border-b border-[#303340] space-y-2.5 shrink-0">
+        <div className="flex items-center space-x-2.5 bg-[#282a34] border border-[#383b4a] rounded-2xl px-3.5 py-2">
           <Search className="w-4 h-4 text-zinc-400 shrink-0" />
           <input
             type="text"
@@ -104,8 +104,8 @@ export default function FilesView({
               onClick={() => setSelectedCategory(cat)}
               className={`px-3.5 py-1.5 rounded-full text-xs font-semibold transition-all shrink-0 ${
                 selectedCategory === cat
-                  ? 'bg-[#2a2a34] text-white shadow-sm'
-                  : 'bg-[#18181e] text-zinc-400 hover:text-zinc-200 border border-[#262630]'
+                  ? 'bg-[#3c4053] text-white shadow-sm'
+                  : 'bg-[#282a34] text-zinc-400 hover:text-zinc-200 border border-[#383b4a]'
               }`}
             >
               {cat}
@@ -120,7 +120,7 @@ export default function FilesView({
           <div
             key={file.id}
             onClick={() => handleOpenFile(file)}
-            className="cursor-pointer rounded-2xl border border-[#282832] bg-[#19191f] hover:bg-[#202028] p-4 sm:p-5 transition-all hover:border-[#383846] group active:scale-[0.99] shadow-sm"
+            className="cursor-pointer rounded-2xl border border-[#383b4a] bg-[#282a34] hover:bg-[#2f3240] p-4 sm:p-5 transition-all hover:border-[#4b5066] group active:scale-[0.99] shadow-sm"
           >
             <div className="flex items-start justify-between gap-2 mb-2">
               <div className="flex items-center space-x-2.5">
@@ -131,7 +131,7 @@ export default function FilesView({
               </div>
 
               <div className="flex items-center space-x-2 shrink-0">
-                <span className="text-[10px] font-mono px-2 py-0.5 rounded-full bg-[#24242e] border border-[#343440] text-zinc-300">
+                <span className="text-[10px] font-mono px-2 py-0.5 rounded-full bg-[#343746] border border-[#434759] text-zinc-200">
                   {file.type}
                 </span>
                 {file.status && (
@@ -141,7 +141,7 @@ export default function FilesView({
                         ? 'bg-[#1b2820] text-emerald-400 border-emerald-800/40'
                         : file.status === 'Ajustado'
                         ? 'bg-[#28221c] text-zinc-300 border-[#40342a]'
-                        : 'bg-[#202028] text-zinc-400 border-[#2d2d38]'
+                        : 'bg-[#333644] text-zinc-300 border-[#414456]'
                     }`}
                   >
                     {file.status}
@@ -154,7 +154,7 @@ export default function FilesView({
               {file.content}
             </p>
 
-            <div className="pt-2.5 border-t border-[#262630] flex flex-wrap items-center justify-between gap-2 text-xs font-mono text-zinc-400">
+            <div className="pt-2.5 border-t border-[#353845] flex flex-wrap items-center justify-between gap-2 text-xs font-mono text-zinc-400">
               <div className="flex items-center space-x-2">
                 <span className="text-zinc-200 font-medium">
                   {file.owner || 'Operador'}

@@ -6,9 +6,9 @@ import {
 
 export default function DashboardView({ operatorCode = 'NS', onEmergencyPurge, onNavigateToChats, onNavigateToNotes }) {
   return (
-    <div className="flex flex-col h-full w-full bg-[#121214] text-zinc-300 overflow-y-auto px-4 py-4 space-y-4">
+    <div className="flex flex-col h-full w-full bg-[#202126] text-zinc-300 overflow-y-auto px-4 py-4 space-y-4">
       {/* CARD DE IDENTIDADE DO OPERADOR */}
-      <div className="relative rounded-3xl bg-[#19191f] border border-[#282832] p-5 shadow-xl overflow-hidden">
+      <div className="relative rounded-3xl bg-[#282a34] border border-[#383b4a] p-5 shadow-xl overflow-hidden">
         <div className="absolute -right-6 -bottom-6 w-32 h-32 bg-emerald-950/20 rounded-full blur-2xl pointer-events-none" />
 
         <div className="flex items-start justify-between">
@@ -32,12 +32,12 @@ export default function DashboardView({ operatorCode = 'NS', onEmergencyPurge, o
             </div>
           </div>
 
-          <div className="w-10 h-10 rounded-2xl bg-[#23232b] border border-[#343440] flex items-center justify-center text-zinc-200 font-mono text-sm font-semibold">
+          <div className="w-10 h-10 rounded-2xl bg-[#343746] border border-[#434759] flex items-center justify-center text-zinc-200 font-mono text-sm font-semibold">
             {operatorCode}
           </div>
         </div>
 
-        <div className="mt-4 pt-3 border-t border-[#262630] grid grid-cols-2 gap-2 text-[11px] font-mono text-zinc-300">
+        <div className="mt-4 pt-3 border-t border-[#353845] grid grid-cols-2 gap-2 text-[11px] font-mono text-zinc-300">
           <div className="flex items-center space-x-1.5">
             <Key className="w-3.5 h-3.5 text-zinc-400" />
             <span>AES-256-GCM</span>
@@ -58,10 +58,10 @@ export default function DashboardView({ operatorCode = 'NS', onEmergencyPurge, o
         {/* BOTÃO CHATS */}
         <button
           onClick={onNavigateToChats}
-          className="w-full rounded-2xl bg-[#19191f] hover:bg-[#202027] border border-[#282832] hover:border-[#383846] p-4 transition-all flex items-center justify-between group active:scale-[0.99]"
+          className="w-full rounded-2xl bg-[#282a34] hover:bg-[#2f3240] border border-[#383b4a] hover:border-[#4b5066] p-4 transition-all flex items-center justify-between group active:scale-[0.99]"
         >
           <div className="flex items-center space-x-3">
-            <div className="w-10 h-10 rounded-2xl bg-[#23232b] border border-[#343440] flex items-center justify-center text-zinc-200 group-hover:text-white">
+            <div className="w-10 h-10 rounded-2xl bg-[#343746] border border-[#434759] flex items-center justify-center text-zinc-200 group-hover:text-white">
               <MessageSquare className="w-5 h-5" />
             </div>
             <div className="text-left">
@@ -69,7 +69,7 @@ export default function DashboardView({ operatorCode = 'NS', onEmergencyPurge, o
                 <span className="text-sm font-semibold text-zinc-200 group-hover:text-white">
                   Comunicações Cifradas
                 </span>
-                <span className="px-1.5 py-0.5 rounded-md text-[10px] font-mono bg-[#282834] text-zinc-300">
+                <span className="px-1.5 py-0.5 rounded-md text-[10px] font-mono bg-[#343746] text-zinc-200">
                   4 Canais
                 </span>
               </div>
@@ -84,10 +84,10 @@ export default function DashboardView({ operatorCode = 'NS', onEmergencyPurge, o
         {/* BOTÃO ARQUIVOS */}
         <button
           onClick={onNavigateToNotes}
-          className="w-full rounded-2xl bg-[#19191f] hover:bg-[#202027] border border-[#282832] hover:border-[#383846] p-4 transition-all flex items-center justify-between group active:scale-[0.99]"
+          className="w-full rounded-2xl bg-[#282a34] hover:bg-[#2f3240] border border-[#383b4a] hover:border-[#4b5066] p-4 transition-all flex items-center justify-between group active:scale-[0.99]"
         >
           <div className="flex items-center space-x-3">
-            <div className="w-10 h-10 rounded-2xl bg-[#23232b] border border-[#343440] flex items-center justify-center text-zinc-200 group-hover:text-white">
+            <div className="w-10 h-10 rounded-2xl bg-[#343746] border border-[#434759] flex items-center justify-center text-zinc-200 group-hover:text-white">
               <FileText className="w-5 h-5" />
             </div>
             <div className="text-left">
@@ -95,7 +95,7 @@ export default function DashboardView({ operatorCode = 'NS', onEmergencyPurge, o
                 <span className="text-sm font-semibold text-zinc-200 group-hover:text-white">
                   Cofre de Arquivos
                 </span>
-                <span className="px-1.5 py-0.5 rounded-md text-[10px] font-mono bg-[#282834] text-zinc-300">
+                <span className="px-1.5 py-0.5 rounded-md text-[10px] font-mono bg-[#343746] text-zinc-200">
                   Documentos
                 </span>
               </div>
@@ -109,7 +109,7 @@ export default function DashboardView({ operatorCode = 'NS', onEmergencyPurge, o
       </div>
 
       {/* LOG DE TELEMETRIA */}
-      <div className="rounded-2xl bg-[#19191f] border border-[#282832] p-4 space-y-2">
+      <div className="rounded-2xl bg-[#282a34] border border-[#383b4a] p-4 space-y-2">
         <div className="flex items-center justify-between text-[11px] font-mono text-zinc-300">
           <div className="flex items-center space-x-1.5">
             <Terminal className="w-3.5 h-3.5 text-zinc-400" />
@@ -117,7 +117,7 @@ export default function DashboardView({ operatorCode = 'NS', onEmergencyPurge, o
           </div>
           <span className="text-emerald-400">Normal</span>
         </div>
-        <div className="text-[10px] font-mono text-zinc-400 space-y-1 bg-[#141417] p-2.5 rounded-xl border border-[#22222a]">
+        <div className="text-[10px] font-mono text-zinc-400 space-y-1 bg-[#202126] p-2.5 rounded-xl border border-[#353846]">
           <div>[12:30:01] Autenticação confirmada para o nó {operatorCode}</div>
           <div>[12:31:15] Chave de sessão rotacionada com sucesso</div>
           <div>[12:31:40] Auto-bloqueio por minimização armado</div>
@@ -132,9 +132,9 @@ export default function DashboardView({ operatorCode = 'NS', onEmergencyPurge, o
               onEmergencyPurge?.();
             }
           }}
-          className="w-full py-3 rounded-2xl bg-[#1d1719] hover:bg-rose-950/50 border border-rose-900/40 hover:border-rose-700 text-rose-400 text-xs font-mono font-medium flex items-center justify-center space-x-2 transition-all active:scale-[0.98]"
+          className="w-full py-3 rounded-2xl bg-[#332026] hover:bg-[#3d242c] border border-rose-900/50 hover:border-rose-600 text-rose-300 text-xs font-mono font-medium flex items-center justify-center space-x-2 transition-all active:scale-[0.98]"
         >
-          <AlertTriangle className="w-4 h-4 text-rose-500" />
+          <AlertTriangle className="w-4 h-4 text-rose-400" />
           <span>Autodestruição de Sessão (Kill Switch)</span>
         </button>
       </div>

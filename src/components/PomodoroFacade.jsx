@@ -10,7 +10,7 @@ import FocusCalendarModal from './FocusCalendarModal';
  * FACHADA CAMUFLADA - FOCUSFLOW POMODORO TIMER (VERSÃO AMPLIADA)
  * ============================================================================
  * - Visual elegante, proporções confortáveis para visualização mobile
- * - Modo escuro grafite/charcoal premium (#121214)
+ * - Modo escuro grafite/charcoal premium (#202126)
  * - Atalho secreto no botão de Histórico (Calendário)
  */
 export default function PomodoroFacade({ onUnlock }) {
@@ -88,9 +88,9 @@ export default function PomodoroFacade({ onUnlock }) {
   const progressPercent = ((totalModeSeconds - timeLeft) / totalModeSeconds) * 100;
 
   return (
-    <div className="relative flex flex-col justify-between w-full h-[100dvh] min-h-[100dvh] bg-[#121214] text-zinc-100 pt-safe px-5 sm:px-8 select-none overflow-y-auto pb-12 sm:pb-8">
+    <div className="relative flex flex-col justify-between w-full h-[100dvh] min-h-[100dvh] bg-[#202126] text-zinc-100 pt-safe px-5 sm:px-8 select-none overflow-y-auto pb-12 sm:pb-8">
       {/* HEADER */}
-      <header className="w-full flex items-center justify-between py-3.5 border-b border-[#24242b] shrink-0">
+      <header className="w-full flex items-center justify-between py-3.5 border-b border-[#353846] shrink-0">
         <div className="flex items-center space-x-3">
           <div className="w-3 h-3 rounded-full bg-emerald-400 animate-pulse" />
           <span className="text-sm sm:text-base font-semibold tracking-wider text-zinc-200 uppercase font-mono">
@@ -100,7 +100,7 @@ export default function PomodoroFacade({ onUnlock }) {
 
         <button
           onClick={() => setIsCalendarOpen(true)}
-          className="flex items-center space-x-2 px-3.5 py-2 rounded-full bg-[#1e1e24] border border-[#2e2e38] hover:border-zinc-500 text-zinc-200 hover:text-white text-xs sm:text-sm font-medium transition-all active:scale-95 shadow-sm"
+          className="flex items-center space-x-2 px-3.5 py-2 rounded-full bg-[#2b2d39] border border-[#3d4154] hover:border-zinc-400 text-zinc-200 hover:text-white text-xs sm:text-sm font-medium transition-all active:scale-95 shadow-sm"
           aria-label="Abrir Histórico"
         >
           <Calendar className="w-4 h-4 text-zinc-400" />
@@ -110,14 +110,14 @@ export default function PomodoroFacade({ onUnlock }) {
 
       {/* SELEÇÃO DE MODOS */}
       <div className="w-full mt-3.5 shrink-0 max-w-md mx-auto">
-        <div className="flex items-center justify-between bg-[#19191e] p-1.5 rounded-2xl border border-[#282832]">
+        <div className="flex items-center justify-between bg-[#282a35] p-1.5 rounded-2xl border border-[#383c4e]">
           {MODES.map((mode) => (
             <button
               key={mode.id}
               onClick={() => handleSelectMode(mode)}
               className={`flex-1 py-2 px-2 text-center rounded-xl text-xs sm:text-sm font-semibold transition-all ${
                 currentMode.id === mode.id
-                  ? 'bg-[#2b2b36] text-white shadow'
+                  ? 'bg-[#3c4053] text-white shadow'
                   : 'text-zinc-400 hover:text-zinc-200'
               }`}
             >
@@ -142,14 +142,14 @@ export default function PomodoroFacade({ onUnlock }) {
           </div>
         </div>
 
-        <div className="w-64 sm:w-80 h-2 bg-[#22222a] rounded-full overflow-hidden mt-7">
+        <div className="w-64 sm:w-80 h-2 bg-[#333646] rounded-full overflow-hidden mt-7">
           <div
             className="h-full bg-zinc-300 transition-all duration-1000 ease-linear rounded-full"
             style={{ width: `${progressPercent}%` }}
           />
         </div>
 
-        <div className="mt-6 flex items-center space-x-2 bg-[#1c1c22] px-4 py-2 rounded-full border border-[#2a2a34] text-xs text-zinc-300">
+        <div className="mt-6 flex items-center space-x-2 bg-[#2b2d39] px-4 py-2 rounded-full border border-[#3d4154] text-xs text-zinc-300">
           <Volume2 className="w-4 h-4 text-zinc-400" />
           <span>Som de Fundo:</span>
           <button
@@ -169,21 +169,21 @@ export default function PomodoroFacade({ onUnlock }) {
       <div className="w-full mb-3.5 shrink-0 max-w-md mx-auto">
         <div 
           onClick={() => setTipIndex((prev) => (prev + 1) % HEALTH_TIPS.length)}
-          className="cursor-pointer bg-[#19191f] border border-[#282832] hover:border-[#383845] rounded-2xl p-4 sm:p-5 transition-all"
+          className="cursor-pointer bg-[#282a35] border border-[#383c4e] hover:border-[#4b5066] rounded-2xl p-4 sm:p-5 transition-all"
         >
           <div className="flex items-center justify-between mb-2">
             <div className="flex items-center space-x-2.5 text-xs sm:text-sm font-semibold text-zinc-200">
               <HeartPulse className="w-4 h-4 text-rose-400" />
               <span>{HEALTH_TIPS[tipIndex].title}</span>
             </div>
-            <span className="text-[11px] font-mono text-zinc-300 bg-[#25252e] px-2.5 py-1 rounded-md border border-[#32323e]">
+            <span className="text-[11px] font-mono text-zinc-200 bg-[#343746] px-2.5 py-1 rounded-md border border-[#434759]">
               {HEALTH_TIPS[tipIndex].tag}
             </span>
           </div>
           <p className="text-xs sm:text-sm text-zinc-300 leading-relaxed">
             {HEALTH_TIPS[tipIndex].text}
           </p>
-          <div className="mt-2.5 flex items-center justify-between text-[11px] text-zinc-500 font-mono">
+          <div className="mt-2.5 flex items-center justify-between text-[11px] text-zinc-400 font-mono">
             <span>Toque para próxima dica</span>
             <span>{tipIndex + 1}/{HEALTH_TIPS.length}</span>
           </div>
@@ -194,7 +194,7 @@ export default function PomodoroFacade({ onUnlock }) {
       <footer className="w-full flex items-center justify-center space-x-4 pb-6 pt-1 shrink-0 max-w-md mx-auto">
         <button
           onClick={handleResetTimer}
-          className="p-4 rounded-full bg-[#1c1c22] border border-[#2e2e38] text-zinc-300 hover:text-white hover:border-zinc-500 active:scale-95 transition-all"
+          className="p-4 rounded-full bg-[#2b2d39] border border-[#3d4154] text-zinc-300 hover:text-white hover:border-zinc-400 active:scale-95 transition-all"
           aria-label="Reiniciar Cronômetro"
         >
           <RotateCcw className="w-5 h-5" />

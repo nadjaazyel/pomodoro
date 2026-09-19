@@ -57,24 +57,24 @@ export default function ChatConversation({
   };
 
   return (
-    <div className="flex flex-col h-full w-full bg-[#121214] text-zinc-300">
+    <div className="flex flex-col h-full w-full bg-[#202126] text-zinc-300">
       {/* Header do Chat */}
-      <div className="px-4 py-3 border-b border-[#24242c] bg-[#161619] flex items-center justify-between shrink-0">
+      <div className="px-4 py-3 border-b border-[#353745] bg-[#282a34] flex items-center justify-between shrink-0">
         <div className="flex items-center space-x-3">
           <button
             onClick={onBack}
-            className="p-2 rounded-xl bg-[#202026] text-zinc-400 hover:text-white border border-[#2e2e38] transition-colors active:scale-95"
+            className="p-2 rounded-xl bg-[#333644] text-zinc-300 hover:text-white border border-[#414456] transition-colors active:scale-95"
             aria-label="Voltar"
           >
             <ArrowLeft className="w-5 h-5" />
           </button>
 
           <div className="relative">
-            <div className="w-11 h-11 rounded-2xl bg-[#202028] border border-[#2c2c38] flex items-center justify-center font-mono text-sm font-bold text-zinc-200">
+            <div className="w-11 h-11 rounded-2xl bg-[#313442] border border-[#414456] flex items-center justify-center font-mono text-sm font-bold text-zinc-200">
               {contact.avatar}
             </div>
             {contact.online && (
-              <div className="absolute -bottom-0.5 -right-0.5 w-3 h-3 rounded-full bg-emerald-500 ring-2 ring-[#121214]" />
+              <div className="absolute -bottom-0.5 -right-0.5 w-3 h-3 rounded-full bg-emerald-500 ring-2 ring-[#202126]" />
             )}
           </div>
 
@@ -88,7 +88,7 @@ export default function ChatConversation({
           </div>
         </div>
 
-        <div className="flex items-center space-x-1.5 px-3 py-1 rounded-full bg-[#1e1e24] border border-[#2c2c36] text-xs font-mono text-zinc-300">
+        <div className="flex items-center space-x-1.5 px-3 py-1 rounded-full bg-[#333644] border border-[#414456] text-xs font-mono text-zinc-200">
           <Shield className="w-3.5 h-3.5 text-emerald-400" />
           <span>E2EE</span>
         </div>
@@ -109,13 +109,13 @@ export default function ChatConversation({
                 <div
                   className={`w-full max-w-md rounded-2xl p-4 sm:p-5 space-y-3.5 shadow-md ${
                     msg.isMe
-                      ? 'bg-[#1c1c24] border border-[#2f2f3d] rounded-br-xs'
-                      : 'bg-[#181820] border border-[#282834] rounded-bl-xs'
+                      ? 'bg-[#2f3240] border border-[#3f4356] rounded-br-xs'
+                      : 'bg-[#282a34] border border-[#383b4a] rounded-bl-xs'
                   }`}
                 >
                   <div className="flex items-start justify-between gap-2">
                     <div className="flex items-center space-x-3">
-                      <div className="p-2.5 rounded-xl bg-[#252530] text-zinc-200">
+                      <div className="p-2.5 rounded-xl bg-[#373a4a] text-zinc-200">
                         <FileText className="w-5 h-5" />
                       </div>
                       <div>
@@ -134,18 +134,18 @@ export default function ChatConversation({
                           ? 'bg-[#1b2820] text-emerald-400 border-emerald-800/40'
                           : currentDoc.status === 'Ajustado'
                           ? 'bg-[#28221c] text-zinc-300 border-[#40342a]'
-                          : 'bg-[#202028] text-zinc-400 border-[#2d2d38]'
+                          : 'bg-[#333644] text-zinc-300 border-[#414456]'
                       }`}
                     >
                       ● {currentDoc.status || 'Pendente'}
                     </span>
                   </div>
 
-                  <p className="text-xs sm:text-sm text-zinc-300 line-clamp-3 leading-relaxed bg-[#131317] p-3 rounded-xl border border-[#22222a]">
+                  <p className="text-xs sm:text-sm text-zinc-300 line-clamp-3 leading-relaxed bg-[#202126] p-3 rounded-xl border border-[#353846]">
                     {currentDoc.content}
                   </p>
 
-                  <div className="flex items-center justify-between pt-1 border-t border-[#262630] text-xs font-mono">
+                  <div className="flex items-center justify-between pt-1 border-t border-[#383b4a] text-xs font-mono">
                     <span className="text-zinc-400">{msg.time}</span>
                     <button
                       onClick={() => handleOpenAgreementFromChat(currentDoc)}
@@ -168,8 +168,8 @@ export default function ChatConversation({
               <div
                 className={`max-w-[85%] sm:max-w-md rounded-2xl px-4 py-3 text-sm sm:text-base leading-relaxed shadow-sm ${
                   msg.isMe
-                    ? 'bg-[#22222c] text-zinc-100 rounded-br-xs border border-[#323242]'
-                    : 'bg-[#181820] text-zinc-200 rounded-bl-xs border border-[#282834]'
+                    ? 'bg-[#373a4a] text-zinc-100 rounded-br-xs border border-[#484c60]'
+                    : 'bg-[#282a34] text-zinc-200 rounded-bl-xs border border-[#383b4a]'
                 }`}
               >
                 {!msg.isMe && (
@@ -194,7 +194,7 @@ export default function ChatConversation({
 
       {/* Popover Seleção de Acordo */}
       {isAgreementPickerOpen && (
-        <div className="p-3.5 bg-[#16161a] border-t border-[#262630] space-y-2.5 max-h-56 overflow-y-auto animate-fade-in shrink-0">
+        <div className="p-3.5 bg-[#282a34] border-t border-[#353745] space-y-2.5 max-h-56 overflow-y-auto animate-fade-in shrink-0">
           <div className="flex items-center justify-between text-xs font-mono text-zinc-300 mb-1 font-semibold">
             <span>Selecione um Acordo para enviar:</span>
             <button
@@ -212,7 +212,7 @@ export default function ChatConversation({
                 <button
                   key={file.id}
                   onClick={() => handleSendAgreement(file)}
-                  className="w-full p-3 rounded-xl bg-[#1e1e24] hover:bg-[#25252e] border border-[#2c2c36] flex items-center justify-between text-left text-sm transition-colors shadow-sm"
+                  className="w-full p-3 rounded-xl bg-[#313442] hover:bg-[#3b3f4f] border border-[#3f4356] flex items-center justify-between text-left text-sm transition-colors shadow-sm"
                 >
                   <div className="flex items-center space-x-2.5 truncate">
                     <FileText className="w-4 h-4 text-zinc-400 shrink-0" />
@@ -228,7 +228,7 @@ export default function ChatConversation({
       )}
 
       {/* Input de Mensagem */}
-      <div className="border-t border-[#24242c] bg-[#161619] p-3 sm:p-4 shrink-0">
+      <div className="border-t border-[#353745] bg-[#282a34] p-3 sm:p-4 shrink-0">
         <form
           onSubmit={handleSendTextMessage}
           className="flex items-center space-x-2.5 w-full max-w-2xl mx-auto"
@@ -236,13 +236,13 @@ export default function ChatConversation({
           <button
             type="button"
             onClick={() => setIsAgreementPickerOpen(!isAgreementPickerOpen)}
-            className="p-2.5 rounded-full bg-[#202026] border border-[#2e2e38] text-zinc-300 hover:text-white transition-colors active:scale-95 shrink-0"
+            className="p-2.5 rounded-full bg-[#333644] border border-[#414456] text-zinc-300 hover:text-white transition-colors active:scale-95 shrink-0"
             title="Enviar Acordo na conversa"
           >
             <Paperclip className="w-5 h-5" />
           </button>
 
-          <div className="relative flex-1 flex items-center bg-[#1a1a20] border border-[#2c2c38] rounded-full px-4 py-2 focus-within:border-zinc-500 transition-colors">
+          <div className="relative flex-1 flex items-center bg-[#202126] border border-[#383b4a] rounded-full px-4 py-2 focus-within:border-zinc-400 transition-colors">
             <input
               type="text"
               value={inputText}
@@ -271,7 +271,7 @@ export default function ChatConversation({
             className={`p-2.5 rounded-full transition-all flex items-center justify-center shrink-0 ${
               inputText.trim()
                 ? 'bg-zinc-100 text-zinc-950 active:scale-95 shadow'
-                : 'bg-[#22222a] text-zinc-600 cursor-not-allowed'
+                : 'bg-[#333644] text-zinc-500 cursor-not-allowed'
             }`}
             aria-label="Enviar"
           >

@@ -37,9 +37,9 @@ export default function UserManagementModal({ isOpen, onClose, onSaveUser }) {
   };
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/85 backdrop-blur-md p-4 animate-fade-in">
-      <div className="w-full max-w-sm bg-zinc-950 border border-neutral-800 rounded-3xl p-5 shadow-2xl flex flex-col text-neutral-200">
-        <div className="flex items-center justify-between pb-3 border-b border-[#25252e]">
+    <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/75 backdrop-blur-md p-4 animate-fade-in">
+      <div className="w-full max-w-sm bg-[#272933] border border-[#3a3d4d] rounded-3xl p-5 shadow-2xl flex flex-col text-neutral-200">
+        <div className="flex items-center justify-between pb-3 border-b border-[#353846]">
           <div className="flex items-center space-x-2">
             <UserPlus className="w-4 h-4 text-zinc-300" />
             <span className="text-xs font-semibold uppercase tracking-wider text-white">
@@ -48,7 +48,7 @@ export default function UserManagementModal({ isOpen, onClose, onSaveUser }) {
           </div>
           <button
             onClick={onClose}
-            className="p-1 rounded-full text-neutral-400 hover:text-white hover:bg-neutral-900 transition-colors"
+            className="p-1 rounded-full text-neutral-400 hover:text-white hover:bg-[#343746] transition-colors"
           >
             <X className="w-4 h-4" />
           </button>
@@ -56,7 +56,7 @@ export default function UserManagementModal({ isOpen, onClose, onSaveUser }) {
 
         <form onSubmit={handleSubmit} className="py-3 space-y-3">
           <div>
-            <label className="block text-[10px] font-mono uppercase text-neutral-500 mb-1">
+            <label className="block text-[10px] font-mono uppercase text-neutral-400 mb-1">
               Código do Operador (2 dígitos: 1 letra + 1 número)
             </label>
             <input
@@ -70,13 +70,13 @@ export default function UserManagementModal({ isOpen, onClose, onSaveUser }) {
               autoCapitalize="off"
               spellCheck="false"
               data-form-type="other"
-              className="w-full bg-neutral-900/60 border border-neutral-800 rounded-xl px-3.5 py-2 text-sm font-mono text-white placeholder-neutral-600 outline-none focus:border-neutral-600"
+              className="w-full bg-[#202126] border border-[#383b4a] rounded-xl px-3.5 py-2 text-sm font-mono text-white placeholder-neutral-500 outline-none focus:border-neutral-400"
               required
             />
           </div>
 
           <div>
-            <label className="block text-[10px] font-mono uppercase text-neutral-500 mb-1">
+            <label className="block text-[10px] font-mono uppercase text-neutral-400 mb-1">
               Codinome / Nome
             </label>
             <input
@@ -89,19 +89,19 @@ export default function UserManagementModal({ isOpen, onClose, onSaveUser }) {
               autoCapitalize="off"
               spellCheck="false"
               data-form-type="other"
-              className="w-full bg-neutral-900/60 border border-neutral-800 rounded-xl px-3.5 py-2 text-xs text-white placeholder-neutral-600 outline-none focus:border-neutral-600"
+              className="w-full bg-[#202126] border border-[#383b4a] rounded-xl px-3.5 py-2 text-xs text-white placeholder-neutral-500 outline-none focus:border-neutral-400"
               required
             />
           </div>
 
           <div>
-            <label className="block text-[10px] font-mono uppercase text-neutral-500 mb-1">
+            <label className="block text-[10px] font-mono uppercase text-neutral-400 mb-1">
               Nível de Acesso
             </label>
             <select
               value={role}
               onChange={(e) => setRole(e.target.value)}
-              className="w-full bg-neutral-900/60 border border-neutral-800 rounded-xl px-3 py-2 text-xs text-white outline-none focus:border-neutral-600"
+              className="w-full bg-[#202126] border border-[#383b4a] rounded-xl px-3 py-2 text-xs text-white outline-none focus:border-neutral-400"
             >
               <option value="Operador Standard">Operador Standard</option>
               <option value="Supervisor Tático">Supervisor Tático</option>
@@ -109,8 +109,8 @@ export default function UserManagementModal({ isOpen, onClose, onSaveUser }) {
             </select>
           </div>
 
-          <div className="space-y-2 pt-2 border-t border-neutral-900">
-            <span className="text-[10px] font-mono uppercase text-neutral-500 block">
+          <div className="space-y-2 pt-2 border-t border-[#353846]">
+            <span className="text-[10px] font-mono uppercase text-neutral-400 block">
               Permissões Autorizadas
             </span>
             <label className="flex items-center space-x-2 text-xs text-neutral-300 cursor-pointer">
@@ -120,7 +120,7 @@ export default function UserManagementModal({ isOpen, onClose, onSaveUser }) {
                 onChange={(e) =>
                   setPermissions({ ...permissions, canSendAgreements: e.target.checked })
                 }
-                className="rounded bg-neutral-900 border-neutral-800"
+                className="rounded bg-[#202126] border-[#383b4a]"
               />
               <span>Pode emitir e enviar acordos</span>
             </label>
@@ -131,13 +131,13 @@ export default function UserManagementModal({ isOpen, onClose, onSaveUser }) {
                 onChange={(e) =>
                   setPermissions({ ...permissions, canEditFiles: e.target.checked })
                 }
-                className="rounded bg-neutral-900 border-neutral-800"
+                className="rounded bg-[#202126] border-[#383b4a]"
               />
               <span>Pode editar arquivos do cofre</span>
             </label>
           </div>
 
-          <div className="pt-3 border-t border-neutral-900 flex items-center justify-end space-x-3">
+          <div className="pt-3 border-t border-[#353846] flex items-center justify-end space-x-3">
             <button
               type="button"
               onClick={onClose}

@@ -69,10 +69,10 @@ export default function AgreementActionModal({
   };
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/85 backdrop-blur-md p-3 sm:p-4 animate-fade-in">
-      <div className="w-full max-w-lg bg-zinc-950 border border-neutral-800 rounded-3xl p-5 shadow-2xl flex flex-col max-h-[85vh] text-neutral-200 overflow-hidden">
+    <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/75 backdrop-blur-md p-3 sm:p-4 animate-fade-in">
+      <div className="w-full max-w-lg bg-[#272933] border border-[#3a3d4d] rounded-3xl p-5 shadow-2xl flex flex-col max-h-[85vh] text-neutral-200 overflow-hidden">
         {/* Header */}
-        <div className="flex items-center justify-between pb-3 border-b border-neutral-900 shrink-0">
+        <div className="flex items-center justify-between pb-3 border-b border-[#353846] shrink-0">
           <div className="flex items-center space-x-2">
             <FileText className="w-4 h-4 text-neutral-400" />
             <span className="text-xs font-mono uppercase tracking-wider text-neutral-400">
@@ -84,7 +84,7 @@ export default function AgreementActionModal({
               setIsEditing(false);
               onClose();
             }}
-            className="p-1 rounded-full text-neutral-400 hover:text-white hover:bg-neutral-900 transition-colors"
+            className="p-1 rounded-full text-neutral-400 hover:text-white hover:bg-[#343746] transition-colors"
           >
             <X className="w-4 h-4" />
           </button>
@@ -97,7 +97,7 @@ export default function AgreementActionModal({
               <h3 className="text-sm font-semibold text-white">
                 {agreement.title}
               </h3>
-              <div className="text-[11px] text-neutral-500 font-mono mt-0.5">
+              <div className="text-[11px] text-neutral-400 font-mono mt-0.5">
                 Proprietário: {agreement.owner || 'Operador X7'} • Tipo: {agreement.type || 'Acordo'}
               </div>
             </div>
@@ -108,7 +108,7 @@ export default function AgreementActionModal({
                   ? 'bg-[#1b2820] text-emerald-400 border-emerald-800/40'
                   : agreement.status === 'Ajustado'
                   ? 'bg-[#28221c] text-zinc-300 border-[#40342a]'
-                  : 'bg-[#202028] text-zinc-400 border-[#2d2d38]'
+                  : 'bg-[#333644] text-zinc-300 border-[#414456]'
               }`}
             >
               ● {agreement.status || 'Pendente'}
@@ -116,8 +116,8 @@ export default function AgreementActionModal({
           </div>
 
           {/* Conteúdo do Documento */}
-          <div className="bg-black/70 border border-neutral-900 rounded-2xl p-4">
-            <div className="text-[10px] font-mono uppercase tracking-wider text-neutral-500 mb-2">
+          <div className="bg-[#202126] border border-[#353846] rounded-2xl p-4">
+            <div className="text-[10px] font-mono uppercase tracking-wider text-neutral-400 mb-2">
               Termos e Cláusulas
             </div>
             {isEditing ? (
@@ -130,7 +130,7 @@ export default function AgreementActionModal({
                 autoCapitalize="off"
                 spellCheck="false"
                 data-form-type="other"
-                className="w-full bg-neutral-900/80 border border-neutral-800 rounded-xl p-3 text-xs text-neutral-200 outline-none focus:border-neutral-600 resize-none font-sans"
+                className="w-full bg-[#282a34] border border-[#383b4a] rounded-xl p-3 text-xs text-neutral-200 outline-none focus:border-neutral-400 resize-none font-sans"
               />
             ) : (
               <p className="text-xs text-neutral-300 leading-relaxed whitespace-pre-wrap">
@@ -140,33 +140,33 @@ export default function AgreementActionModal({
           </div>
 
           {/* Histórico de Auditoria & Visualizações */}
-          <div className="bg-zinc-900/40 border border-neutral-900 rounded-2xl p-3.5 space-y-2">
+          <div className="bg-[#202126] border border-[#353846] rounded-2xl p-3.5 space-y-2">
             <div className="flex items-center space-x-1.5 text-[11px] font-mono text-neutral-400">
-              <History className="w-3.5 h-3.5 text-neutral-500" />
+              <History className="w-3.5 h-3.5 text-neutral-400" />
               <span>Histórico de Auditoria & Acessos</span>
             </div>
 
-            <div className="space-y-1.5 text-[10px] font-mono divide-y divide-neutral-900/50">
+            <div className="space-y-1.5 text-[10px] font-mono divide-y divide-[#353846]">
               {agreement.history && agreement.history.length > 0 ? (
                 agreement.history.map((h, i) => (
                   <div key={i} className="pt-1.5 flex items-start justify-between">
                     <div>
                       <span className="text-neutral-300 font-semibold">{h.action}</span> por{' '}
                       <span className="text-white">{h.user}</span>
-                      {h.detail && <span className="text-neutral-500 block">{h.detail}</span>}
+                      {h.detail && <span className="text-neutral-400 block">{h.detail}</span>}
                     </div>
-                    <span className="text-neutral-500 shrink-0 ml-2">{h.time}</span>
+                    <span className="text-neutral-400 shrink-0 ml-2">{h.time}</span>
                   </div>
                 ))
               ) : (
-                <div className="text-neutral-500">Sem registros anteriores de modificação.</div>
+                <div className="text-neutral-400">Sem registros anteriores de modificação.</div>
               )}
             </div>
           </div>
         </div>
 
         {/* Rodapé com Botões de Ação */}
-        <div className="pt-3 border-t border-neutral-900 flex items-center justify-between gap-2 shrink-0">
+        <div className="pt-3 border-t border-[#353846] flex items-center justify-between gap-2 shrink-0">
           {isEditing ? (
             <>
               <button
@@ -187,7 +187,7 @@ export default function AgreementActionModal({
             <>
               <button
                 onClick={handleStartEdit}
-                className="flex items-center space-x-1.5 px-3 py-2 rounded-xl bg-neutral-900 border border-neutral-800 text-neutral-300 hover:text-white text-xs transition-colors active:scale-95"
+                className="flex items-center space-x-1.5 px-3 py-2 rounded-xl bg-[#333644] border border-[#414456] text-neutral-200 hover:text-white text-xs transition-colors active:scale-95"
               >
                 <Edit3 className="w-3.5 h-3.5 text-neutral-400" />
                 <span>Fazer Ajustes</span>

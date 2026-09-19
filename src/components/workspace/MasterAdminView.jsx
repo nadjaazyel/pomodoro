@@ -28,12 +28,12 @@ export default function MasterAdminView({
   const [activeFile, setActiveFile] = useState(null);
 
   return (
-    <div className="flex flex-col h-full w-full bg-[#121214] text-zinc-300 overflow-y-auto px-4 py-4 space-y-4">
+    <div className="flex flex-col h-full w-full bg-[#202126] text-zinc-300 overflow-y-auto px-4 py-4 space-y-4">
       {/* HEADER EXECUTIVO SÓBRIO */}
-      <div className="rounded-2xl bg-[#17171c] border border-[#25252e] p-4 shadow-sm">
+      <div className="rounded-2xl bg-[#282a34] border border-[#383b4a] p-4 shadow-sm">
         <div className="flex items-center justify-between">
           <div className="flex items-center space-x-3">
-            <div className="w-10 h-10 rounded-xl bg-[#202028] border border-[#2c2c38] flex items-center justify-center text-white font-mono text-sm font-semibold">
+            <div className="w-10 h-10 rounded-xl bg-[#343746] border border-[#434759] flex items-center justify-center text-white font-mono text-sm font-semibold">
               A1
             </div>
             <div>
@@ -41,7 +41,7 @@ export default function MasterAdminView({
                 <span className="text-sm font-semibold text-white">
                   Diretoria Executiva
                 </span>
-                <span className="text-[10px] font-mono px-1.5 py-0.5 rounded bg-[#252530] text-zinc-300 border border-[#343442]">
+                <span className="text-[10px] font-mono px-1.5 py-0.5 rounded bg-[#343746] text-zinc-200 border border-[#434759]">
                   Administração Geral
                 </span>
               </div>
@@ -54,12 +54,12 @@ export default function MasterAdminView({
       </div>
 
       {/* SELETOR DE SUB-ABAS SÓBRIO */}
-      <div className="flex items-center justify-between bg-[#17171c] p-1 rounded-xl border border-[#25252e] shrink-0">
+      <div className="flex items-center justify-between bg-[#282a34] p-1 rounded-xl border border-[#383b4a] shrink-0">
         <button
           onClick={() => setActiveTab('users')}
           className={`flex-1 py-1.5 text-center rounded-lg text-xs font-medium transition-all ${
             activeTab === 'users'
-              ? 'bg-[#24242e] text-white shadow-sm font-semibold'
+              ? 'bg-[#3c4053] text-white shadow-sm font-semibold'
               : 'text-zinc-400 hover:text-zinc-200'
           }`}
         >
@@ -69,7 +69,7 @@ export default function MasterAdminView({
           onClick={() => setActiveTab('files')}
           className={`flex-1 py-1.5 text-center rounded-lg text-xs font-medium transition-all ${
             activeTab === 'files'
-              ? 'bg-[#24242e] text-white shadow-sm font-semibold'
+              ? 'bg-[#3c4053] text-white shadow-sm font-semibold'
               : 'text-zinc-400 hover:text-zinc-200'
           }`}
         >
@@ -79,7 +79,7 @@ export default function MasterAdminView({
           onClick={() => setActiveTab('audit')}
           className={`flex-1 py-1.5 text-center rounded-lg text-xs font-medium transition-all ${
             activeTab === 'audit'
-              ? 'bg-[#24242e] text-white shadow-sm font-semibold'
+              ? 'bg-[#3c4053] text-white shadow-sm font-semibold'
               : 'text-zinc-400 hover:text-zinc-200'
           }`}
         >
@@ -107,17 +107,17 @@ export default function MasterAdminView({
             {users.map((u) => (
               <div
                 key={u.id}
-                className="rounded-xl bg-[#17171c] border border-[#25252e] p-3.5 space-y-2.5"
+                className="rounded-xl bg-[#282a34] border border-[#383b4a] p-3.5 space-y-2.5"
               >
                 <div className="flex items-start justify-between">
                   <div className="flex items-center space-x-3">
-                    <div className="w-8 h-8 rounded-lg bg-[#202028] border border-[#2d2d38] flex items-center justify-center font-mono text-xs font-semibold text-white">
+                    <div className="w-8 h-8 rounded-lg bg-[#343746] border border-[#434759] flex items-center justify-center font-mono text-xs font-semibold text-white">
                       {u.code}
                     </div>
                     <div>
                       <div className="flex items-center space-x-2">
                         <span className="text-xs font-semibold text-white">{u.name}</span>
-                        <span className="text-[9px] font-mono px-1.5 py-0.5 rounded bg-[#202028] border border-[#2d2d38] text-zinc-300">
+                        <span className="text-[9px] font-mono px-1.5 py-0.5 rounded bg-[#343746] border border-[#434759] text-zinc-200">
                           {u.code}
                         </span>
                       </div>
@@ -125,12 +125,12 @@ export default function MasterAdminView({
                     </div>
                   </div>
 
-                  <span className="text-[10px] font-mono px-2 py-0.5 rounded-md bg-[#202028] text-zinc-300 border border-[#2d2d38]">
+                  <span className="text-[10px] font-mono px-2 py-0.5 rounded-md bg-[#343746] text-zinc-200 border border-[#434759]">
                     {u.status}
                   </span>
                 </div>
 
-                <div className="pt-2 border-t border-[#22222a] flex items-center justify-between text-[11px]">
+                <div className="pt-2 border-t border-[#353845] flex items-center justify-between text-[11px]">
                   <span className="text-zinc-400">Emissão de Acordos:</span>
                   <button
                     onClick={() =>
@@ -142,7 +142,7 @@ export default function MasterAdminView({
                     className={`px-2.5 py-0.5 rounded text-[10px] font-medium transition-colors ${
                       u.permissions?.canSendAgreements
                         ? 'bg-[#1e2a22] text-emerald-400 border border-emerald-800/40'
-                        : 'bg-[#261e20] text-zinc-400 border border-[#3a282c]'
+                        : 'bg-[#2b2528] text-zinc-400 border border-[#3d2e33]'
                     }`}
                   >
                     {u.permissions?.canSendAgreements ? 'Autorizado' : 'Bloqueado'}
@@ -168,14 +168,14 @@ export default function MasterAdminView({
               <div
                 key={f.id}
                 onClick={() => setActiveFile(f)}
-                className="cursor-pointer rounded-xl bg-[#17171c] border border-[#25252e] hover:border-[#353540] p-3.5 transition-all group"
+                className="cursor-pointer rounded-xl bg-[#282a34] border border-[#383b4a] hover:border-[#4b5066] p-3.5 transition-all group"
               >
                 <div className="flex items-start justify-between gap-2 mb-1">
                   <div className="flex items-center space-x-2">
                     <FileText className="w-3.5 h-3.5 text-zinc-400 group-hover:text-white" />
                     <h4 className="text-xs font-semibold text-white">{f.title}</h4>
                   </div>
-                  <span className="text-[9px] font-mono px-2 py-0.5 rounded bg-[#202028] border border-[#2d2d38] text-zinc-300">
+                  <span className="text-[9px] font-mono px-2 py-0.5 rounded bg-[#343746] border border-[#434759] text-zinc-200">
                     {f.type}
                   </span>
                 </div>
@@ -184,7 +184,7 @@ export default function MasterAdminView({
                   {f.content}
                 </p>
 
-                <div className="pt-2 border-t border-[#22222a] flex items-center justify-between text-[10px] font-mono">
+                <div className="pt-2 border-t border-[#353845] flex items-center justify-between text-[10px] font-mono">
                   <div className="flex items-center space-x-1.5 text-zinc-300">
                     <span className="text-zinc-500">Autor:</span>
                     <span className="font-semibold">{f.owner}</span>
@@ -206,7 +206,7 @@ export default function MasterAdminView({
           <span className="text-[11px] font-mono tracking-wider text-zinc-400 uppercase">
             Registros de Acesso e Auditoria
           </span>
-          <div className="rounded-xl bg-[#17171c] border border-[#25252e] p-3.5 font-mono text-[10px] space-y-2 text-zinc-300">
+          <div className="rounded-xl bg-[#282a34] border border-[#383b4a] p-3.5 font-mono text-[10px] space-y-2 text-zinc-300">
             <div>[12:28:10] Sessão de administração A1 autenticada</div>
             <div>[12:25:40] Operador NS acessou o documento Acordo Operacional Q3</div>
             <div>[12:22:15] Minuta enviada no canal de Operações K9</div>

@@ -49,16 +49,16 @@ export default function PinModal({ isOpen, onClose, onUnlock }) {
   if (!isOpen) return null;
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/80 backdrop-blur-md p-4 animate-fade-in">
+    <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/75 backdrop-blur-md p-4 animate-fade-in">
       <div 
-        className={`w-full max-w-xs rounded-2xl bg-zinc-950 border border-zinc-900 p-6 shadow-2xl flex flex-col items-center ${
+        className={`w-full max-w-xs rounded-2xl bg-[#272933] border border-[#3a3d4d] p-6 shadow-2xl flex flex-col items-center ${
           error ? 'animate-shake' : ''
         }`}
       >
         <div className="w-full flex justify-end">
           <button 
             onClick={onClose}
-            className="text-zinc-500 hover:text-zinc-300 p-1 rounded-full transition-colors active:scale-95"
+            className="text-zinc-400 hover:text-white p-1 rounded-full transition-colors active:scale-95"
             aria-label="Fechar"
           >
             <X className="w-4 h-4" />
@@ -66,7 +66,7 @@ export default function PinModal({ isOpen, onClose, onUnlock }) {
         </div>
 
         {/* Título minimalista e discreto */}
-        <h3 className="text-sm font-medium text-zinc-400 tracking-wider uppercase mb-6">
+        <h3 className="text-sm font-medium text-zinc-300 tracking-wider uppercase mb-6">
           PIN
         </h3>
 
@@ -81,8 +81,8 @@ export default function PinModal({ isOpen, onClose, onUnlock }) {
                   isFilled
                     ? error
                       ? 'bg-red-500 scale-110'
-                      : 'bg-zinc-200 scale-105'
-                    : 'border border-zinc-700 bg-zinc-900/50'
+                      : 'bg-zinc-100 scale-105'
+                    : 'border border-[#434759] bg-[#202126]'
                 }`}
               />
             );
@@ -95,7 +95,7 @@ export default function PinModal({ isOpen, onClose, onUnlock }) {
             <button
               key={num}
               onClick={() => handleDigit(num)}
-              className="h-14 rounded-full bg-zinc-900/60 hover:bg-zinc-850 active:bg-zinc-800 text-lg font-medium text-zinc-200 border border-zinc-800/40 transition-all flex items-center justify-center select-none active:scale-95"
+              className="h-14 rounded-full bg-[#313442] hover:bg-[#3b3f4f] active:bg-[#434759] text-lg font-medium text-zinc-100 border border-[#3f4356] transition-all flex items-center justify-center select-none active:scale-95 shadow-sm"
             >
               {num}
             </button>
@@ -103,13 +103,13 @@ export default function PinModal({ isOpen, onClose, onUnlock }) {
           <div /> {/* Espaço vazio */}
           <button
             onClick={() => handleDigit('0')}
-            className="h-14 rounded-full bg-zinc-900/60 hover:bg-zinc-850 active:bg-zinc-800 text-lg font-medium text-zinc-200 border border-zinc-800/40 transition-all flex items-center justify-center select-none active:scale-95"
+            className="h-14 rounded-full bg-[#313442] hover:bg-[#3b3f4f] active:bg-[#434759] text-lg font-medium text-zinc-100 border border-[#3f4356] transition-all flex items-center justify-center select-none active:scale-95 shadow-sm"
           >
             0
           </button>
           <button
             onClick={handleDelete}
-            className="h-14 rounded-full bg-transparent hover:bg-zinc-900/30 text-xs font-normal text-zinc-500 hover:text-zinc-400 flex items-center justify-center select-none active:scale-95"
+            className="h-14 rounded-full bg-transparent hover:bg-[#313442] text-xs font-normal text-zinc-400 hover:text-zinc-200 flex items-center justify-center select-none active:scale-95"
           >
             Apagar
           </button>
